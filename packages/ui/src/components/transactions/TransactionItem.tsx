@@ -18,7 +18,7 @@ import Tooltip from "../../components/label/Tooltip"
 
 // Asset
 import eth from "../../assets/images/icons/ETH.svg"
-import blankLogo from "../../assets/images/logo.svg"
+import blankLogo from "../../assets/images/logo.png"
 import flashbotsLogo from "../../assets/images/flashbots.png"
 
 import {
@@ -65,8 +65,8 @@ const transactionMessages = {
     [TransactionCategories.TOKEN_METHOD_TRANSFER]: "Token Transfer",
     [TransactionCategories.TOKEN_METHOD_INCOMING_TRANSFER]: "Received Token",
     [TransactionCategories.TOKEN_METHOD_TRANSFER_FROM]: "Token Transfer From",
-    [TransactionCategories.EXCHANGE]: "BlockWallet Swap",
-    [TransactionCategories.BRIDGE]: "BlockWallet Bridge",
+    [TransactionCategories.EXCHANGE]: "CakeWallet Swap",
+    [TransactionCategories.BRIDGE]: "CakeWallet Bridge",
     [TransactionCategories.INCOMING_BRIDGE]: "Incoming Bridge",
     [TransactionCategories.INCOMING_BRIDGE_REFUND]: "Bridge Refund",
     [TransactionCategories.INCOMING_BRIDGE_PLACEHOLDER]: "Incoming Bridge",
@@ -111,9 +111,8 @@ const getPendingTransactionMessage = (
     })()
 
     if (metaType === MetaType.CANCEL || metaType === MetaType.SPEED_UP)
-        return `${
-            metaType === MetaType.CANCEL ? "Cancelation" : "Speeding up"
-        } of ${message[0].toLowerCase()}${message.substring(1)}`
+        return `${metaType === MetaType.CANCEL ? "Cancelation" : "Speeding up"
+            } of ${message[0].toLowerCase()}${message.substring(1)}`
 
     return message
 }
@@ -145,7 +144,7 @@ const getTransactionItemStyles = (
 const transactionIcons = {
     [TransactionCategories.BLANK_DEPOSIT]: <img src={blankLogo} alt="blank" />,
     [TransactionCategories.BLANK_WITHDRAWAL]: (
-        <img src={blankLogo} alt="BlockWallet" />
+        <img src={blankLogo} alt="CakeWallet" />
     ),
     [TransactionCategories.INCOMING]: <img src={eth} alt="ETH" />,
     [TransactionCategories.SENT_ETHER]: <img src={eth} alt="ETH" />,
@@ -199,27 +198,27 @@ const TransactionIcon: React.FC<{
     transaction: { transactionCategory: category, transactionStatus },
     transactionIcon,
 }) => (
-    <div className="align-start">
-        {transactionStatus !== TransactionStatus.SUBMITTED ? (
-            transactionIcon ? (
-                <AssetIcon
-                    asset={{
-                        logo: transactionIcon,
-                        symbol: "",
-                    }}
-                />
-            ) : category ? (
+        <div className="align-start">
+            {transactionStatus !== TransactionStatus.SUBMITTED ? (
+                transactionIcon ? (
+                    <AssetIcon
+                        asset={{
+                            logo: transactionIcon,
+                            symbol: "",
+                        }}
+                    />
+                ) : category ? (
+                    <div className={Classes.roundedIcon}>
+                        {transactionIcons[category]}
+                    </div>
+                ) : null
+            ) : (
                 <div className={Classes.roundedIcon}>
-                    {transactionIcons[category]}
+                    <PendingSpinner />
                 </div>
-            ) : null
-        ) : (
-            <div className={Classes.roundedIcon}>
-                <PendingSpinner />
-            </div>
-        )}
-    </div>
-)
+            )}
+        </div>
+    )
 
 const getTransactionTime = (
     status: TransactionStatus,
@@ -337,18 +336,18 @@ const getTransactionLabel = (
 
         return isPending
             ? getPendingTransactionMessage(
-                  transactionCategory,
-                  metaType,
-                  networkNativeCurrency.symbol
-              ) ||
-                  getTransactionMessage(
-                      transactionCategory,
-                      networkNativeCurrency.symbol
-                  )
+                transactionCategory,
+                metaType,
+                networkNativeCurrency.symbol
+            ) ||
+            getTransactionMessage(
+                transactionCategory,
+                networkNativeCurrency.symbol
+            )
             : getTransactionMessage(
-                  transactionCategory,
-                  networkNativeCurrency.symbol
-              )
+                transactionCategory,
+                networkNativeCurrency.symbol
+            )
     }
 
     const defaultCategory = getCategoryMessage()
@@ -506,16 +505,16 @@ const TransactionItem: React.FC<{
         status === TransactionStatus.SUBMITTED &&
         metaType === MetaType.REGULAR &&
         transactionCategory !==
-            TransactionCategories.INCOMING_BRIDGE_PLACEHOLDER &&
+        TransactionCategories.INCOMING_BRIDGE_PLACEHOLDER &&
         !isBlankWithdraw
 
     const OperationDetails =
         transactionCategory &&
-        [
-            TransactionCategories.BRIDGE,
-            TransactionCategories.INCOMING_BRIDGE_REFUND,
-            TransactionCategories.INCOMING_BRIDGE,
-        ].includes(transactionCategory)
+            [
+                TransactionCategories.BRIDGE,
+                TransactionCategories.INCOMING_BRIDGE_REFUND,
+                TransactionCategories.INCOMING_BRIDGE,
+            ].includes(transactionCategory)
             ? BridgeDetails
             : TransactionDetails
 
@@ -528,10 +527,9 @@ const TransactionItem: React.FC<{
             />
 
             <div
-                className={`flex flex-col px-6 py-5 -ml-6 transition duration-300 hover:bg-primary-100 hover:bg-opacity-50 active:bg-primary-200 active:bg-opacity-50 ${
-                    !(txHash && transaction.transactionParams.from) &&
+                className={`flex flex-col px-6 py-5 -ml-6 transition duration-300 hover:bg-primary-100 hover:bg-opacity-50 active:bg-primary-200 active:bg-opacity-50 ${!(txHash && transaction.transactionParams.from) &&
                     "cursor-default"
-                }`}
+                    }`}
                 style={{ width: "calc(100% + 3rem)" }}
                 role="button"
                 data-txid={txHash}
@@ -692,9 +690,9 @@ const TransactionItem: React.FC<{
                     )}
                 </div>
                 {status === TransactionStatus.CONFIRMED &&
-                transactionCategory === TransactionCategories.BRIDGE &&
-                bridgeParams &&
-                BRIDGE_PENDING_STATUS.includes(bridgeParams!.status! || "") ? (
+                    transactionCategory === TransactionCategories.BRIDGE &&
+                    bridgeParams &&
+                    BRIDGE_PENDING_STATUS.includes(bridgeParams!.status! || "") ? (
                     <div className="ml-11 mt-2">
                         <i className="text-gray-500">
                             <>
@@ -714,8 +712,8 @@ const TransactionItem: React.FC<{
 
             {/* Compliance Menu */}
             {isBlankWithdraw &&
-            status !== TransactionStatus.SUBMITTED &&
-            showContextMenu ? (
+                status !== TransactionStatus.SUBMITTED &&
+                showContextMenu ? (
                 <div
                     className="absolute"
                     style={{ top: anchorPoint.y, left: anchorPoint.x }}

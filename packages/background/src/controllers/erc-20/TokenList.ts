@@ -112,7 +112,8 @@ const NETWORK_TOKENS_LIST: INetworkTokens = {
             type: 'ERC20',
         },
     }, // goerli
-    3: {}, // ropsten
+    6066: {}, // treslechesmainnet
+    6065: {}, // treslechestestnet
     42: {}, // kovan
     4: {}, // rinkeby
     97: {}, // bsc testnet
@@ -149,6 +150,8 @@ const NETWORKS_NAMES: { [key in number]: string } = {
     100: 'xdai',
     50: 'xdc',
     280: 'zksync',
+    6066: 'tresleches',
+    6065: 'trestestnet',
 };
 
 export const NETWORK_TOKENS_LIST_ARRAY: { [chainId in number]: string[] } = {};

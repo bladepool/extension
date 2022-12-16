@@ -5,7 +5,7 @@ import PopupLayout from "../../components/popup/PopupLayout"
 
 import AccountIcon from "../../components/icons/AccountIcon"
 import { getAccountColor } from "../../util/getAccountColor"
-import blankIcon from "../../assets/images/logo.svg"
+import blankIcon from "../../assets/images/logo.png"
 import arrow from "../../assets/images/icons/arrow_right_black.svg"
 import PopupFooter from "../../components/popup/PopupFooter"
 import {
@@ -122,11 +122,11 @@ const WithdrawBlankConfirm = () => {
         accountAddress in accounts
             ? (accounts[accountAddress] as AccountInfo)
             : accountAddress in addressBook
-            ? ({
-                  name: addressBook[accountAddress].name,
-                  address: addressBook[accountAddress].address,
-              } as AccountInfo)
-            : undefined
+                ? ({
+                    name: addressBook[accountAddress].name,
+                    address: addressBook[accountAddress].address,
+                } as AccountInfo)
+                : undefined
 
     // If we have gasPrice, this mean it's a non EIP-1559 network
     // otherwise we use maxFeePerGas
@@ -397,8 +397,8 @@ const WithdrawBlankConfirm = () => {
                                 >
                                     {formatName(
                                         account?.name ??
-                                            accountName ??
-                                            "External",
+                                        accountName ??
+                                        "External",
                                         10
                                     )}
                                 </span>
@@ -428,9 +428,8 @@ const WithdrawBlankConfirm = () => {
                             <span className="text-sm flex items-center">
                                 {estimatedFee ? (
                                     <>
-                                        {`${
-                                            estimatedFee.totalFee
-                                        } ${pair.currency.toUpperCase()}`}
+                                        {`${estimatedFee.totalFee
+                                            } ${pair.currency.toUpperCase()}`}
                                         {logo && (
                                             <img
                                                 src={logo}

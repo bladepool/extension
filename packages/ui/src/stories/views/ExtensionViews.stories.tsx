@@ -308,7 +308,7 @@ export const SwitchEthereumChain = () => (
                 "1": {
                     origin: "http://app.blockwallet.io/",
                     siteMetadata: {
-                        name: "BlockWallet",
+                        name: "CakeWallet",
                         iconURL: "http://app.blockwallet.io/icons/icon-128.png",
                     },
                     time: 1,
@@ -331,7 +331,7 @@ export const AddEthereumChain = () => (
                 "1": {
                     origin: "http://app.blockwallet.io/",
                     siteMetadata: {
-                        name: "BlockWallet",
+                        name: "CakeWallet",
                         iconURL: "http://app.blockwallet.io/icons/icon-128.png",
                     },
                     time: 1,

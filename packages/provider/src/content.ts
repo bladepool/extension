@@ -52,7 +52,7 @@ chrome.runtime.sendMessage(
         ) {
             port.disconnect();
             window.removeEventListener('message', windowListenter);
-            log.warn('BlockWallet: Provider not injected due to user setting.');
+            log.warn('CakeWallet Provider not injected due to user setting.');
         } else if (providerOverridden) {
             injectProvider();
         }

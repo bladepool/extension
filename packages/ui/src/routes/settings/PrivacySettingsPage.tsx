@@ -143,18 +143,18 @@ const PrivacySettingsPage = () => {
                         <span>
                             On 8th August 2022, U.S. Department of the
                             Treasury’s Office of Foreign Assets Control
-                            sanctioned Tornado Cash. As a response, BlockWallet
+                            sanctioned Tornado Cash. As a response, CakeWallet
                             halted the use of the Tornado Protocol in our
                             wallet.
                         </span>
                         <br />
                         <br />
                         <span>
-                            With the functions above users of BlockWallet that
+                            With the functions above users of CakeWallet that
                             have deposited into the Tornado Protocol before, can
                             still see their Tornado Notes, in order to use
                             another interface to withdraw their funds from
-                            Tornado or use BlockWallet’s compliance feature.
+                            Tornado or use CakeWallet’s compliance feature.
                         </span>
                     </span>
                 </Alert>

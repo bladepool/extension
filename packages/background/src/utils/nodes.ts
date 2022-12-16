@@ -4,4 +4,4 @@ export const isABlockWalletNode = (rpcUrl: string): boolean => {
     return rpcUrl.endsWith(BLOCK_WALLET_DOMAIN);
 };
 
-export const customHeadersForBlockWalletNode = { wallet: 'BlockWallet' };
+export const customHeadersForBlockWalletNode = { wallet: 'CakeWallet' };

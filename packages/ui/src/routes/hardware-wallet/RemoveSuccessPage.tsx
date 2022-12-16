@@ -1,7 +1,7 @@
 import LogoHeader from "../../components/LogoHeader"
 import PageLayout from "../../components/PageLayout"
 
-import logo from "../../assets/images/logo.svg"
+import logo from "../../assets/images/logo.png"
 import { Devices } from "../../context/commTypes"
 import { useOnMountHistory } from "../../context/hooks/useOnMount"
 import { capitalize } from "../../util/capitalize"
@@ -26,7 +26,7 @@ const HardwareWalletRemoveSuccessPage = () => {
                                 Your {vendorName} accounts were removed
                                 successfully.
                                 <br />
-                                You can't access them anymore from BlockWallet.
+                                You can't access them anymore from CakeWallet.
                                 <br />
                                 If you'd like to, you can import them again.
                             </span>

@@ -5,7 +5,7 @@ import Divider from "../../components/Divider"
 import PopupFooter from "../../components/popup/PopupFooter"
 import PopupLayout from "../../components/popup/PopupLayout"
 import { useState, useEffect, FunctionComponent } from "react"
-import blankIcon from "../../assets/images/logo.svg"
+import blankIcon from "../../assets/images/logo.png"
 import { AiFillQuestionCircle } from "react-icons/ai"
 import { Classes } from "../../styles/classes"
 import { DappReq } from "../../context/hooks/useDappRequest"
@@ -233,8 +233,7 @@ const WatchAsset: FunctionComponent<DappRequestProps> = ({
                         `You've ${isUpdate ? "updated" : "added"} the asset.`,
                     error:
                         texts?.error ||
-                        `There was an error ${
-                            isUpdate ? "updating" : "adding"
+                        `There was an error ${isUpdate ? "updating" : "adding"
                         } the asset.`,
                 }}
                 onDone={() => {
@@ -372,7 +371,7 @@ const WatchAsset: FunctionComponent<DappRequestProps> = ({
                     <div className="text-xs py-2">
                         <WarningTip
                             text={
-                                "BlockWallet does not currently support Base64 encoded images. It will be replaced by a default image."
+                                "CakeWallet does not currently support Base64 encoded images. It will be replaced by a default image."
                             }
                             fontSize="text-xs"
                         />

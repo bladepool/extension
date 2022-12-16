@@ -56,8 +56,8 @@ const getWarningMessage = (accountType: AccountType) => {
             {hardwareMessage}
             <span>
                 If you make a deposit with an external account, the seed phrase
-                of the BlockWallet extension is required to reconstruct your
-                notes on another BlockWallet installation.
+                of the CakeWallet extension is required to reconstruct your
+                notes on another CakeWallet installation.
             </span>
         </>
     )
@@ -257,7 +257,7 @@ const DepositPage = () => {
                             <AiOutlineWarning className="w-4 h-4 yellow-300" />
                             <span className="text-xs text-yellow-900">
                                 <span className="font-bold">
-                                    BlockWallet seed phrase is used.
+                                    CakeWallet seed phrase is used.
                                 </span>
                             </span>
                         </div>

@@ -1,7 +1,7 @@
 import PopupLayout from "../components/popup/PopupLayout"
 import PopupHeader from "../components/popup/PopupHeader"
 import LinkButton from "../components/button/LinkButton"
-import logo from "../assets/images/logo.svg"
+import logo from "../assets/images/logo.png"
 import PopupFooter from "../components/popup/PopupFooter"
 
 const BackupDonePage = () => {
@@ -20,7 +20,7 @@ const BackupDonePage = () => {
                 </span>
                 <img src={logo} alt="logo" className="w-12 h-12 mx-auto" />
                 <span className="font-base text-center text-sm">
-                    You can now continue using BlockWallet.
+                    You can now continue using CakeWallet.
                 </span>
             </div>
         </PopupLayout>

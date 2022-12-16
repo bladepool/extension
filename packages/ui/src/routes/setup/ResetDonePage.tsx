@@ -5,7 +5,7 @@ import Confetti from "react-dom-confetti"
 import LogoHeader from "../../components/LogoHeader"
 import PageLayout from "../../components/PageLayout"
 
-import logo from "../../assets/images/logo.svg"
+import logo from "../../assets/images/logo.png"
 import { completeSetup } from "../../context/commActions"
 
 const ResetDonePage = () => {
@@ -41,12 +41,12 @@ const ResetDonePage = () => {
                         </span>
                         <div className="flex flex-col md:flex-row items-center space-x-1 w-52 md:w-full mx-auto text-gray-600 text-sm text-center leading-loose">
                             <span>
-                                You're ready to start using BlockWallet again.
+                                You're ready to start using CakeWallet again.
                                 <br />
                                 The wallet has been reset with a new seed
                                 phrase.
                                 <br />
-                                Access BlockWallet via the extensions section of
+                                Access CakeWallet via the extensions section of
                                 your browser.
                             </span>
                         </div>

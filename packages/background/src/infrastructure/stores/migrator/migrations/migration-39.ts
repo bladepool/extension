@@ -16,6 +16,8 @@ const explorerNames: { [x: number]: string } = {
     42161: 'Arbiscan',
     43114: 'Snowtrace',
     80001: 'Polygonscan',
+    6066: 'Bscscan',
+    6065: 'Bscscan',
 };
 
 /**

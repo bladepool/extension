@@ -27,7 +27,7 @@ test("renders and show custom logo", () => {
                 ...availableNetworks,
                 GOERLI: {
                     ...availableNetworks.GOERLI,
-                    iconUrls: ["custom_network_logo.svg"],
+                    iconUrls: ["custom_network_logo.png"],
                 },
             },
         },
@@ -36,6 +36,6 @@ test("renders and show custom logo", () => {
     expect(element).toBeDefined()
     expect(element).toHaveProperty(
         "src",
-        "http://localhost/custom_network_logo.svg"
+        "http://localhost/custom_network_logo.png"
     )
 })
